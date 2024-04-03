@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+div {
+  width: 200px;
+  height: 200px;
+  background-image:url(mundo.jfif);
+  position: relative;
+  animation-name: example; /*bloque de codigo */
+  animation-duration: 4s; 
+  animation-delay: 3s;
+}
+
+@keyframes example { /*5 momentos*/
+  0%   {transform: rotate(90deg); left:0px; top:0px;}
+  25%  {transform: rotate(-90deg); left:200px; top:0px;}
+  50%  {transform: rotate(90deg); left:200px; top:200px;}
+  75%  {transform: rotate(-90deg); left:0px; top:200px;}
+  100% {transform: rotate(0deg); left:0px; top:0px;}
+}
+</style>
+</head>
+<body>
+
+<h1>CSS Animation</h1>
+
+<p>The animation-delay property specifies a delay for the start of an animation. The following example has a 2 seconds delay before starting the animation:</p>
+
+<div></div>
+
+</body>
+</html>
+

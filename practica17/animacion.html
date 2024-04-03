@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transición de imagen con CSS</title>
+    <style>
+        body{
+            background-color: beige;
+        }
+        a{
+            font-family: cursive;
+            font-size: 20px;
+            text-decoration:none;
+            color: white;/* color de letra */
+        }
+        /* Estilos básicos para el boton normal */
+        .boton {
+            width: 130px; /* Ancho inicial */
+            height: 50px;/* Altura inicial */
+            font-size: 20px;
+            transition: width 0.5s; /* Transición suave */
+            border: 2px solid rgb(221, 252, 200);
+            margin: 10px;
+            background-color: rgb(64, 169, 230); /* color */
+            color: white;/* color de letra */
+            position: relative;
+        }
+
+        /* Cambio de tamaño al hacer hover */
+        .boton:hover {
+            border: 2px solid rgb(132, 0, 255);
+            background-color: rgb(67, 106, 235);
+            color: black;
+            width: 170px; /* Ancho al hacer hover */
+            text-align: center;
+            text-decoration:underline;
+        }
+    </style>
+</head>
+<body>
+<center>
+    <h1>Transición de imagen con CSS</h1>
+    <div class="boton">
+        <a href="https://www.upslp.edu.mx/upslp/">Nosotros</a>
+    </div>
+    <div class="boton">
+        <a href="https://www.upslp.edu.mx/upslp/?page_id=244">Aspirantes</a>
+    </div>
+    <div class="boton">
+        <a href="https://www.upslp.edu.mx/upslp/?page_id=209">Estudiantes</a>
+    </div>
+    <div class="boton">
+        <a href="https://www.upslp.edu.mx/upslp/?page_id=231">Docentes</a>
+    </div>
+    <div class="boton">
+        <a href="https://www.upslp.edu.mx/upslp/?page_id=241">Egresados</a>
+    </div>
+    <div class="boton">
+       <a href="https://www.upslp.edu.mx/upslp/?page_id=10971">Contacto</a> 
+    </div>
+</center>
+</body>
+</html>
