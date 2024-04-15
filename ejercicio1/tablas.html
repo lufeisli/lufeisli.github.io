@@ -1,0 +1,61 @@
+<html>
+
+<head>
+
+  <title>Parcial 3 practica </title>
+
+  <script type = "text/javascript">
+
+  function alertName() {
+
+    var filas1= parseInt(document.forms[0].filas.value);<!--parseInt:convierte el valor en entero, ya q el valor es un tipo TEXTO-->
+    var columnas1= parseInt(document.forms[0].columnas.value);
+    document.write("<table border=1>");
+    for(i=1;i<=filas1;i++)
+    {
+        document.write("<tr class='tabla'>");
+        for(j=1;j<=columnas1;j++)
+    {
+      document.write("<td>celda</td>");
+    }
+      document.write("</tr>");
+   } 
+   document.write("</table>");
+    return true;
+  }
+
+  </script>
+  <style>
+    p{
+    font-family: cursive;
+    color: rgb(52, 222, 148);
+    }
+    .tabla{
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(125, 84, 206);
+    }
+    .tabla tr{
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(84, 204, 206);
+    }
+    .tabla td{
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(84, 119, 206);
+    }
+</style>
+</head>
+
+<body>
+
+<form id="myform" onsubmit="return alertName();"> <!--onsubmit: evento al picar el boton e ir a la funcion alertName -->
+<tr></tr>
+<p>Cuantas filas <input id="filas" name="filas" type="text" /></p>
+<p>Cuantas columnas <input id="columnas" name="columnas" type="text" /></p>
+<p><input type="submit" /></p>
+
+</form>
+
+</body>

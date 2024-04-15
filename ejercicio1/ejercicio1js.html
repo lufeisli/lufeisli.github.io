@@ -1,0 +1,46 @@
+<html>
+
+<head>
+
+  <title>Bienvenida del usuario</title>
+  <style>
+    p{
+    font-family: cursive;
+    color: aquamarine;
+    }
+</style>
+  <script type = "text/javascript">
+
+  function alertName() {
+
+    var veces1= parseInt(document.forms[0].veces.value);<!--parseInt: convierte el valor en entero, ya q el valor es un tipo TEXTO-->
+
+    for(i=1;i<=veces1;i++) 
+
+    {
+
+      document.write("<p>Este es un párrafo</p>");
+
+    }
+
+    return true;
+
+  }
+
+  </script>
+
+</head>
+
+<body>
+
+<form id="myform" onsubmit="return alertName();"> <!--onsubmit: evento al picar el boton e ir a la funcion alertName -->
+
+<p>Cuantos párrafos <input id="veces" name="veces" type="text" /></p>
+
+<p><input type="submit" /></p>
+
+</form>
+
+</body>
+
+</html>
