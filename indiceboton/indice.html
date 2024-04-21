@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Indice con botones</title>
+</head>
+<style>
+    body{
+        background-image: url(fondo.jpg);
+    }
+    h1{
+        font-family: cursive;
+        color: rgb(180, 107, 248);
+        align-self: center;
+    }
+    h3{
+        font-family: cursive;
+    }
+
+    a{
+        font-size: larger;
+        color: blueviolet;
+    }
+    button{
+        border: 2px solid rgb(124, 86, 247);
+        width: 13%;
+        height: 30%;
+        transition: width 0.5s;
+        position: relative;
+        background-color: rgb(140, 237, 201);
+        color: rgb(66, 106, 102);
+        font-size: larger;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        margin: 2% 2%;
+        align-content:center;
+    }
+    button:hover{
+        border: 2px solid rgb(0, 0, 0);
+        background-color: rgb(162, 251, 169);
+        width: 15%;
+        height: 30%;
+    }
+
+</style>
+<body>
+    <center>
+    <h1>MINIMENU</h1>
+    <h3>Click en la opción</h3>
+    <button onclick="ejercicio1()">Ejercicio 1</button>
+    <button onclick="ejercicio2()">Ejercicio 2</button>
+    <button onclick="ejercicio3()">Ejercicio 3</button>
+    <button onclick="ejercicio4()">Ejercicio 4</button>
+    <button onclick="ejercicio5()">Ejercicio 5</button>
+    <button onclick="ejercicio6()">Ejercicio 6</button>
+    <button onclick="ejercicio7()">Ejercicio 7</button>
+    <button onclick="ejercicio8()">Ejercicio 8</button>
+    <p id="demo"></p>
+    <script>
+    function ejercicio1(){
+        document.getElementById("demo").innerHTML
+        = "<a href='https://portafoliolfjb.000webhostapp.com/ejercicio1/ejercicio1js.html'>Ejercicio 1</a>";
+    }
+    function ejercicio2(){
+        document.getElementById("demo").innerHTML
+        = "<a href='https://portafoliolfjb.000webhostapp.com/ejercicio1/tablas2.html'>Ejercicio 2</a>";
+    }
+    function ejercicio3(){
+        document.getElementById("demo").innerHTML
+        = "<a href='https://portafoliolfjb.000webhostapp.com/ejercicio1/incisoA.html'>Ejercicio 3</a>";
+    }
+    function ejercicio4(){
+        document.getElementById("demo").innerHTML
+        = "<a href='https://portafoliolfjb.000webhostapp.com/ejercicio1/tablas.html'>Ejercicio 4</a>";
+    }
+    function ejercicio5(){
+        document.getElementById("demo").innerHTML
+        = "<a href='https://portafoliolfjb.000webhostapp.com/ejercicio1/reto1.html'>Ejercicio 5</a>";
+    }
+    function ejercicio6(){
+        document.getElementById("demo").innerHTML
+        = "<a href='https://portafoliolfjb.000webhostapp.com/ejercicio1/sesion.html'>Ejercicio 6</a>";
+    }
+    function ejercicio7(){
+        document.getElementById("demo").innerHTML
+        = "<a href='https://portafoliolfjb.000webhostapp.com/ejercicio1/conversor.html'>Ejercicio 7</a>";
+    }
+    function ejercicio8(){
+        document.getElementById("demo").innerHTML
+        = "<a href='https://portafoliolfjb.000webhostapp.com/ejercicio2/arreglos3.html'>Ejercicio 8</a>";
+    }
+    </script>
+</center>
+</body>
+</html>
