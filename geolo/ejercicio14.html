@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+<style>
+    h1{
+        color: rgba(255, 0, 200, 0.6);
+    }
+</style>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<body>
+<div id="myPlot" style="width:100%;max-width:700px"></div>
+<div id="myPlot2" style="width:100%;max-width:700px"></div>
+<div id="myPlot3" style="width:100%;max-width:700px"></div>
+<script>
+const xArray = ["Programacion 1","Ingles 5","Fisica 1", "Matematicas 1", "Progra. Web 1", "Nucleo General 2"];
+const yArray = [7.5, 7, 5.5, 8.5, 10, 10];
+const data = [{
+ x:xArray,
+ y:yArray,
+
+ type:"bar",
+ orientation:"v",
+ marker: {color:"rgba(0,0,255,0.6)"}
+
+}];
+const layout = {title:"Calificaciones 1 Parcial"};
+Plotly.newPlot("myPlot", data, layout);
+
+const xArray1 = ["Programacion 1","Fisica 1", "Matematicas 1", "Progra. Web 1", "Nucleo General 2"];
+const yArray1 = [7.5, 8, 8.5, 9, 10];
+const data1 = [{
+ x:xArray1,
+ y:yArray1,
+
+ type:"bar",
+ orientation:"v",
+ marker: {color:"rgba(0, 255, 76, 0.6)"}
+
+}];
+const layout1 = {title:"Calificaciones 2 Parcial"};
+Plotly.newPlot("myPlot2", data1, layout1);
+
+const xArray2 = ["Programacion 1","Fisica 1", "Matematicas 1", "Progra. Web 1", "Nucleo General 2"];
+const yArray2 = [];
+    for(let i=0; i<xArray2.length; i++)
+        yArray2.push(Math.random()*10 + 0.5);
+
+const data2 = [{
+ x:xArray2,
+ y:yArray2,
+ type:"bar",
+ orientation:"v",
+ marker: {color:"rgba(255, 0, 200, 0.6)"}
+
+}];
+const layout2 = {title:"Calificaciones 3 Parcial"};
+Plotly.newPlot("myPlot3", data2, layout2);
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<body>
+<canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+<script> //Faltan Valores ALEATORIOS 
+const xValues = ["","Progra 1", "Fisica 1", "Matematicas 1", "PrograWeb 1", "Nucleo general 2"];
+const yValues = [];
+for (let i=0; i< xValues.length; i++){
+    yValues.push(Math.random() *10 + 0.5);}
+    
+const barColors = ["","rgba(0,0,255,0.6)", "green","blue","orange","brown"]; //colores
+new Chart("myChart", {//new=contructor 
+ type: "bar",
+ data: {
+  labels: xValues,
+  datasets: [{
+   backgroundColor: barColors, //color de fondo y valores
+   data: yValues
+  }]
+ },
+ options: {
+  legend: {display: false},
+  title: {
+   display: true,
+   text: "World Wine Production 2018"
+  }
+ }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<body>
+<div id="myPlot" style="width:100%;max-width:700px"></div>
+<script>
+//let exp = "Math.sin(x)";
+//let exp = "Math.cos(x)";
+//let exp = "Math.log(x)";
+function distancia(){
+ 
+ var inicio1 = parseInt(document.forms[0].inicio.value);
+ var fin1 = parseInt(document.forms[0].fin.value);
+ var funcionSelec =document.forms[0].funciones.value;
+
+ if(funcionSelec === "Seno"){
+        grafica("Math.sin(x)", inicio1, fin1);
+    } else if (funcionSelec === "Coseno") {
+        grafica("Math.cos(x)", inicio1, fin1);
+    } else if (funcionSelec === "Tangente") {
+        grafica("Math.tan(x)", inicio1, fin1);
+    } else if (funcionSelec === "Cotangente") {
+        grafica("1 / Math.tan(x)", inicio1, fin1);
+    }
+    return false;
+}
+
+function grafica(exp, inicio, fin){
+const xValues = [];
+const yValues = [];
+
+for(let x= inicio; x <= fin; x+= 0.1){
+    xValues.push(x);
+    yValues.push(eval(exp.replace(/x/g, x)));
+}
+const data = [{x:xValues, y:yValues, mode:"lines"}];
+const layout = {title:"y = " + exp};
+Plotly.newPlot("myPlot", data, layout);
+}
+
+</script>
+
+<form id="myform" onsubmit="return distancia();"> 
+<p>inicio<input id="inicio" name="inicio" type="text"/></p>
+<p>fin<input id="fin" name="fin" type="text"/></p>
+<select name="funciones" id="funciones">
+    <option value="Seno" >SENO</option>
+    <option value="Coseno" >COSENO</option>
+    <option value="Tangente" >TANGENTE</option>
+    <option value="Cotangente">COTANGENTE</option>
+</select>
+<p><input type="submit" /></p>
+</form>
+</body>
+</html>
