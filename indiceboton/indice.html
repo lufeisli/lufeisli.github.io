@@ -5,11 +5,11 @@
 </head>
 <style>
     body{
-        background-image: url(fondo.jpg);
+        background-color: rgb(228, 210, 244);
     }
     h1{
         font-family: cursive;
-        color: rgb(180, 107, 248);
+        color: rgb(119, 56, 179);
         align-self: center;
     }
     h3{
@@ -26,7 +26,7 @@
         height: 30%;
         transition: width 0.5s;
         position: relative;
-        background-color: rgb(140, 237, 201);
+        background-color: rgb(173, 241, 216);
         color: rgb(66, 106, 102);
         font-size: larger;
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -35,9 +35,23 @@
     }
     button:hover{
         border: 2px solid rgb(0, 0, 0);
-        background-color: rgb(162, 251, 169);
-        width: 15%;
+        background-color: rgb(240, 239, 226);
+        color: rgb(0, 12, 120);
+        width: 14%;
         height: 30%;
+    }
+    .sem2{
+        border: 2px solid rgb(114, 18, 174);
+        width: 13%;
+        height: 30%;
+        transition: width 0.5s;
+        position: relative;
+        background-color: rgb(126, 216, 243);
+        color: rgb(34, 37, 38);
+        font-size: larger;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        margin: 2% 2%;
+        align-content:center;
     }
 
 </style>
@@ -45,6 +59,8 @@
     <center>
     <h1>MINIMENU</h1>
     <h3>Click en la opción</h3>
+<div>
+    <h2>Semana 1</h2>
     <button onclick="ejercicio1()">Ejercicio 1</button>
     <button onclick="ejercicio2()">Ejercicio 2</button>
     <button onclick="ejercicio3()">Ejercicio 3</button>
@@ -53,7 +69,19 @@
     <button onclick="ejercicio6()">Ejercicio 6</button>
     <button onclick="ejercicio7()">Ejercicio 7</button>
     <button onclick="ejercicio8()">Ejercicio 8</button>
+</div>
+<div>
+    <h2>Semana 2</h2>
+    <button class="sem2" onclick="ejercicio9()">Ejercicio 9</button>
+    <button class="sem2" onclick="ejercicio10()">Ejercicio 10</button>
+    <button class="sem2" onclick="ejercicio11()">Ejercicio 11</button>
+    <button class="sem2" onclick="ejercicio12()">Ejercicio 12</button>
+    <button class="sem2" onclick="ejercicio13()">Ejercicio 13</button>
+    <button class="sem2" onclick="ejercicio14()">Ejercicio 14</button>
+    <button class="sem2" onclick="ejercicio15()">Ejercicio 15</button>
+    <button class="sem2" onclick="ejercicio16()">Ejercicio 16</button>
     <p id="demo"></p>
+</div>
     <script>
     function ejercicio1(){
         document.getElementById("demo").innerHTML
@@ -86,6 +114,38 @@
     function ejercicio8(){
         document.getElementById("demo").innerHTML
         = "<a href='https://portafoliolfjb.000webhostapp.com/ejercicio2/arreglos3.html'>Ejercicio 8</a>";
+    }
+    function ejercicio9(){
+        document.getElementById("demo").innerHTML
+        = "<a href='https://lufeisli.github.io/geolo/ejercicio11.html'>Ejercicio 9</a>";
+    }
+    function ejercicio10(){
+        document.getElementById("demo").innerHTML
+        = "<a href='https://lufeisli.github.io/geolo/ejercicio12.html'>Ejercicio 10</a>";
+    }
+    function ejercicio11(){
+        document.getElementById("demo").innerHTML
+        = "<a href='https://lufeisli.github.io/geolo/ejercicio13.html'>Ejercicio 11</a>";
+    }
+    function ejercicio12(){
+        document.getElementById("demo").innerHTML
+        = "<a href='https://lufeisli.github.io/geolo/ejercicio14.html'>Ejercicio 12</a>";
+    }
+    function ejercicio13(){
+        document.getElementById("demo").innerHTML
+        = "<a href='https://lufeisli.github.io/geolo/ejercicio15.html'>Ejercicio 13</a>";
+    }
+    function ejercicio14(){
+        document.getElementById("demo").innerHTML
+        = "<a href='https://lufeisli.github.io/geolo/ejercicio16.html'>Ejercicio 14</a>";
+    }
+    function ejercicio15(){
+        document.getElementById("demo").innerHTML
+        = "<a href='https://lufeisli.github.io/geolo/reto1graf.html'>Ejercicio 15</a>";
+    }
+    function ejercicio16(){
+        document.getElementById("demo").innerHTML
+        = "<a href='https://lufeisli.github.io/geolo/reto2graf.html'>Ejercicio 16</a>";
     }
     </script>
 </center>
