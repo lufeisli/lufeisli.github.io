@@ -1,16 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<body>
- <h1>Ahorcado</h1>
-
-<canvas id="myCanvas" width="400" height="400" style=" border: 1px solid black;">
-
-</canvas>
-
 <script>
+
+function dibujar(){
 const canvas = document.getElementById("myCanvas");
 const ctx = canvas.getContext("2d");
-
 ctx.beginPath(); // Esta función inicia un nuevo trazado
 ctx.arc(200,70,45,0,2*Math.PI);
 /*200: Coordenada X del centro del arco.
@@ -44,7 +38,20 @@ ctx.beginPath();
     ctx.moveTo(200, 280);
     ctx.lineTo(100, 380);
 ctx.stroke();
+}
+function limpiar(){
+const canvas = document.getElementById("myCanvas");
+const ctx = canvas.getContext("2d");
+    ctx.fillStyle = "white";
+    ctx.fillRect(0,0, 400,400);
+    rect(x,y,400,400);
+}
 </script>
-
+<body>
+<h1>Ahorcado</h1>
+   <p><button onclick="dibujar()">Dibujar</button></p>
+   <p><button onclick="limpiar()">Limpiar</button></p>
+<canvas id="myCanvas" width="400" height="400" style=" border: 1px solid black;">
+   </canvas>
 </body>
 </html>

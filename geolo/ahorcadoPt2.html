@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<script>
+ var cont = 0;
+function dibujar(){
+const canvas = document.getElementById("myCanvas");
+const ctx = canvas.getContext("2d");
+var intento = prompt("Adivina la palabra secreta");
+var palabraSecreta="girasol";
+
+
+
+if (intento != palabraSecreta){
+    cont++;
+
+    switch(cont){
+        case 1:
+        ctx.beginPath(); // Esta función inicia un nuevo trazado
+        ctx.arc(200,70,45,0,2*Math.PI);
+        ctx.stroke(); //dibuja el trazado definido previamente
+        break;
+
+        case 2:
+        ctx.beginPath(); //Inicia un nuevo trazado.
+        ctx.moveTo(200, 110); //Esta función mueve el "lápiz" (el punto de dibujo) a las coordenadas (200, 110) sin dibujar nada. Es como levantar un lápiz de papel y moverlo a una nueva ubicación.
+        ctx.lineTo(200, 280); // Esta función traza una línea desde la posición actual del lápiz (en este caso, (200, 110)) hasta las coordenadas (125, 45). Esto dibuja la parte vertical.
+        ctx.stroke();//toma el trazado definido hasta ese punto y lo muestra en el lienzo.
+        alert("Es una flor");
+        break;
+
+        case 3: 
+        ctx.beginPath();
+        ctx.moveTo(200, 130);
+        ctx.lineTo(300, 190);
+        ctx.stroke();
+        alert("Es muy brillante");
+        break;
+
+        case 4: 
+        ctx.beginPath();
+        ctx.moveTo(200, 130);
+        ctx.lineTo(100, 190);
+        ctx.stroke();
+        alert("No son las rosas");
+        break;
+
+        case 5:
+        ctx.beginPath();
+        ctx.moveTo(200, 280);
+        ctx.lineTo(300, 380);
+        ctx.stroke();
+        alert("Color amarilla");
+        break;
+
+        case 6:
+        ctx.beginPath();
+        ctx.moveTo(200, 280);
+        ctx.lineTo(100, 380);
+        ctx.stroke();
+        alert("Perdiste");
+        break;
+    }
+}
+else{
+    alert("GANASTE!!");
+    limpiar();
+}
+
+return false;
+
+}
+function limpiar(){
+    const canvas = document.getElementById("myCanvas");
+    const ctx = canvas.getContext("2d");
+    ctx.fillStyle = "white";
+    ctx.fillRect(0, 0, 400, 400);
+
+}
+</script>
+<body>
+<h1>Ahorcado</h1>
+   <p><button onclick="dibujar()">Jugar</button></p>
+   <p><button onclick="limpiar()">Limpiar</button></p>
+<canvas id="myCanvas" width="400" height="400" style=" border: 1px solid black;">
+   </canvas>
+</body>
+</html>
