@@ -1,0 +1,43 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="js/jquery/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery/jquery-ui-1.8.17.custom.min.js"></script>
+	<script type="text/javascript" src="jspdf.js"></script>
+
+	<script type="text/javascript" src="jspdf.plugin.addimage.js"></script>
+
+	<script type="text/javascript" src="jspdf.plugin.standard_fonts_metrics.js"></script>
+	<script type="text/javascript" src="jspdf.plugin.split_text_to_size.js"></script>
+	<script type="text/javascript" src="jspdf.plugin.from_html.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <iframe frameborder="0" width="500" height="400"></iframe> 
+    <script>
+        
+var caracter = prompt('caracter:');
+var altura = parseInt(prompt('Altura:'));
+
+var doc = new jsPDF();
+doc.setFontSize(22);
+doc.text(20, 20, 'Piramide');
+doc.setFontSize(16);
+doc.text(20, 30, 'Caracter: ' + caracter + ' con altura de: '+ altura); //doc.text(x, y, lo q imprime)
+
+for(var i = 1; i <= altura; i ++) {
+	var row ='';
+    for(var j=0; j<i; j++){
+        row += caracter;
+    }
+    doc.text(20, 30 + (i * 10 ) , i + " " + row);
+}
+
+var string = doc.output('datauristring'); //se va a memoria
+
+$('iframe').attr('src', string);
+    </script>
+</body>
+</html>
