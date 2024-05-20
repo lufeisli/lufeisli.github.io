@@ -51,8 +51,8 @@ body{
 }
 
 .ani {
-    width: 15%;
-    height: 15%;
+    width: 22%;
+    height: 22%;
     position: relative;
     animation-name: spin;
     animation-duration: 4s; 
