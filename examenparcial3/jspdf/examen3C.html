@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />	
+  
+    <script type="text/javascript" src="js/jquery/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery/jquery-ui-1.8.17.custom.min.js"></script>
+    <script type="text/javascript" src="jspdf.js"></script>
+  
+    <script type="text/javascript" src="jspdf.plugin.addimage.js"></script>
+  
+    <script type="text/javascript" src="jspdf.plugin.standard_fonts_metrics.js"></script>
+    <script type="text/javascript" src="jspdf.plugin.split_text_to_size.js"></script>
+    <script type="text/javascript" src="jspdf.plugin.from_html.js"></script>
+    
+    <title>Examen Contraseñas</title>
+</head>
+<body>
+
+<form id="myform" onsubmit="return Contraseñas();">
+    <p>Longitud: <input id="long" name="long" type="text" /></p>
+    <label>
+        <input type="checkbox" name="minusculas" value="minusculas">
+        Letras minusculas
+    </label><br>
+    <label>
+        <input type="checkbox" name="mayusculas" value="mayusculas">
+        Letras mayusculas
+    </label><br>
+    <label>
+        <input type="checkbox" name="numeros" value="numeros">
+        Numeros de 0-9
+    </label><br>
+    <label>
+        <input type="checkbox" name="simbolos" value="simbolos">
+        Simbolos especiales
+    </label><br>
+    <p>Cantidad de contraseñas: <input id="cant" name="cant" type="text" /></p>
+    <p><input type="submit" value="Generar" /></p>
+</form>
+
+<div id="resultado"></div>
+<iframe id="pdfFrame" width="50%" height="500px"></iframe>
+
+<script>
+    // Definir el arreglo de caracteres por tipo
+    const caracteres = {
+        mayusculas: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+        minusculas: "abcdefghijklmnopqrstuvwxyz",
+        numeros: "0123456789",
+        simbolos: "!#$%&/()=?¡¿"
+    };
+
+    function Contraseñas() {
+        // Obtener valores del formulario
+        const longitud = parseInt(document.getElementById('long').value);
+        const cantidad = parseInt(document.getElementById('cant').value);
+        const Minusculas = document.querySelector('input[name="minusculas"]').checked;
+        const Mayusculas = document.querySelector('input[name="mayusculas"]').checked;
+        const Numeros = document.querySelector('input[name="numeros"]').checked;
+        const Simbolos = document.querySelector('input[name="simbolos"]').checked;
+
+        // Verificar que la longitud y cantidad sean válidas
+        if (longitud < 8 || longitud > 13) {
+            alert("La longitud debe ser mayor a 8 y menor a 13.");
+            return false;
+        }
+
+        // Construir el conjunto de caracteres válidos
+        let caracteresValidos = '';
+        if (Minusculas) caracteresValidos += caracteres.minusculas;
+        if (Mayusculas) caracteresValidos += caracteres.mayusculas;
+        if (Numeros) caracteresValidos += caracteres.numeros;
+        if (Simbolos) caracteresValidos += caracteres.simbolos;
+
+        // Verificar que al menos un tipo de carácter haya sido seleccionado
+        if (caracteresValidos === '') {
+            alert("Selecciona al menos un tipo de carácter.");
+            return false;
+        }
+
+        // Generar las contraseñas
+        let resultado = [];
+        for (let i = 0; i < cantidad; i++) {
+            let contrasena = '';
+            for (let j = 0; j < longitud; j++) {
+                const indiceAleatorio = Math.floor(Math.random() * caracteresValidos.length);
+                contrasena += caracteresValidos[indiceAleatorio];
+            }
+            resultado.push(contrasena);
+        }
+
+        // Mostrar las contraseñas generadas
+        document.getElementById('resultado').innerHTML = resultado.join('<br>');
+        var doc = new jsPDF();
+        doc.setFontSize(12);
+        doc.text(20, 20, "CONTRASEÑAS:");
+        doc.text(20, 30, resultado.join('\n'));
+
+        // Mostrar el PDF en un iframe
+        var string = doc.output('datauristring');
+        document.getElementById('pdfFrame').src = string;
+        return false;
+    }
+</script>
+
+</body>
+</html>
